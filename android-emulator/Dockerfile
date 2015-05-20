@@ -1,6 +1,6 @@
-FROM ksoichiro/android
+FROM pinguozhanglu/android
 
-MAINTAINER ksoichiro "soichiro.kashima@gmail.com"
+MAINTAINER zhanglu "zhanglu@camera360.com"
 
 RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force
 
