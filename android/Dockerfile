@@ -1,6 +1,6 @@
 FROM ubuntu:12.04
 
-MAINTAINER ksoichiro "soichiro.kashima@gmail.com"
+MAINTAINER zhanglu "zhanglu@camera360.com"
 
 RUN apt-get update -qq
 
