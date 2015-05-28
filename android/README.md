@@ -17,4 +17,5 @@ Android SDK for development.
 
 For example, if you want to build android project, and the project includes `gradlew`, then just do this:
 
-    docker run -t -i -v `pwd`:/workspace -w /workspace ksoichiro/android /bin/sh -c "./gradlew assemble"
+    cd /path/to/project
+    docker run -t -i -v `pwd`:/workspace -w /workspace pinguozhanglu/android /bin/sh -c "./gradlew assemble"
