@@ -12,8 +12,8 @@ ADD wait-for-emulator /usr/local/bin/
 ADD start-emulator /usr/local/bin/
 
 RUN mkdir -p /opt/tmp && android create project -g -v 0.9.+ -a MainActivity -k com.example.example -t android-17 -p /opt/tmp
-RUN cd /opt/tmp && ./gradlew tasks
-RUN rm -rf /opt/tmp
+#RUN cd /opt/tmp && ./gradlew tasks
+#RUN rm -rf /opt/tmp
 
 VOLUME /workspace
 WORKDIR /workspace
