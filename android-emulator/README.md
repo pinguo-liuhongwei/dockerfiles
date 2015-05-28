@@ -8,5 +8,5 @@ Android and emulator with gradle cache.
 If you want to test with emulator using gradlew, execute below:
 
     cd /path/to/project
-    docker run -t -i -v `pwd`:/workspace ksoichiro/android-emulator start-emulator "./gradlew connectedAndroidTest"
+    docker run -t -i -v `pwd`:/workspace pinguozhanglu/android-emulator start-emulator "./gradlew connectedAndroidTest"
 
