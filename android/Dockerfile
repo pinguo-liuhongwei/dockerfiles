@@ -47,7 +47,7 @@ RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,andro
 # Cleaning
 RUN apt-get clean
 
-chown -R worker.worker /home/worker/
+RUN chown -R worker.worker /home/worker/
 
 EXPOSE 22 80
 CMD ["/usr/sbin/sshd", "-D"]
