@@ -17,7 +17,7 @@ RUN mkdir -p ${HOME}/testProject && android create project -g -v 0.9.+ -a MainAc
 #RUN cd /opt/tmp && ./gradlew tasks
 #RUN rm -rf /opt/tmp
 
-chown -R worker.worker /home/worker
+RUN chown -R worker.worker /home/worker/
 
 VOLUME ${HOME}/data
 WORKDIR ${HOME}
