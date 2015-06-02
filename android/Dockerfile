@@ -16,7 +16,9 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
       -e 's/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g' \
       -e 's/^#UseDNS yes/UseDNS no/g' \
       /etc/ssh/sshd_config \
+    && rm -rf /etc/ssh/ssh_host_rsa_key \
     && ssh-keygen -q -b 1024 -N '' -t rsa -f /etc/ssh/ssh_host_rsa_key \
+    && rm -rf /etc/ssh/ssh_host_dsa_key \
     && ssh-keygen -q -b 1024 -N '' -t dsa -f /etc/ssh/ssh_host_dsa_key \
     && echo "NETWORKING=yes" > /etc/sysconfig/network
 
