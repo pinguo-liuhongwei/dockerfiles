@@ -7,7 +7,7 @@ RUN apt-get update -qq
 # Dependencies to execute android
 RUN apt-get install -y --no-install-recommends openjdk-7-jdk libgd2-xpm ia32-libs ia32-libs-multiarch \
         bzip2 unzip file vim curl telnet wget git \
-        openssl openssh-server openssh sudo python-pip
+        openssl openssh-server sudo python-pip
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
     && sed -i \
