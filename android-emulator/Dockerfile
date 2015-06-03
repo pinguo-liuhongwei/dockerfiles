@@ -3,7 +3,8 @@ FROM pinguozhanglu/android
 MAINTAINER zhanglu "zhanglu@camera360.com"
 
 ENV HOME /home/worker
-RUN mkdir -p ${HOME}/data
+RUN mkdir -p ${HOME}/data/logs/supervisor
+RUN mkdir -p ${HOME}/data/run/supervisor
 
 RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force
 
@@ -17,9 +18,12 @@ RUN mkdir -p ${HOME}/testProject && android create project -g -v 0.9.+ -a MainAc
 #RUN cd /opt/tmp && ./gradlew tasks
 #RUN rm -rf /opt/tmp
 
+ADD run.sh /
+ADD config /home/worker/
+
 RUN chown -R worker.worker /home/worker/
 
 VOLUME ${HOME}/data
 WORKDIR ${HOME}
 
-ENTRYPOINT /usr/sbin/sshd -D
+ENTRYPOINT ["/run.sh"]

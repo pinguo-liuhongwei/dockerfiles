@@ -1,0 +1,3 @@
+# .bash_alias
+
+alias supervisorctl='supervisorctl -c /home/worker/supervisor/supervisord.conf'
