@@ -3,6 +3,6 @@
 echo '/etc/init.d/ssh start'
 /etc/init.d/ssh start
 
-echo '/usr/bin/supervisord -c /home/worker/supervisor/supervisord.conf'
-/usr/bin/supervisord -c /home/worker/supervisor/supervisord.conf
+echo '/usr/local/bin/supervisord -c /home/worker/supervisor/supervisord.conf'
+/usr/local/bin/supervisord -c /home/worker/supervisor/supervisord.conf
 
