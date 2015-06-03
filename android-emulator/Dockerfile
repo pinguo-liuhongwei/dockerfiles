@@ -21,6 +21,7 @@ RUN mkdir -p ${HOME}/testProject && android create project -g -v 0.9.+ -a MainAc
 ADD run.sh /
 ADD config /home/worker/
 
+RUN chmod a+x /run.sh
 RUN chown -R worker.worker /home/worker/
 
 VOLUME ${HOME}/data
