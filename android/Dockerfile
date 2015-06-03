@@ -8,6 +8,9 @@ RUN apt-get update -qq
 RUN apt-get install -y --no-install-recommends openjdk-7-jdk libgd2-xpm ia32-libs ia32-libs-multiarch \
         bzip2 unzip file vim curl telnet wget git \
         openssl openssh-server sudo python-pip
+        
+RUN pip install supervisor \
+    && rm -rvf /tmp/*
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
     && sed -i \
@@ -50,5 +53,5 @@ RUN apt-get clean
 RUN mkdir -p /var/run/sshd
 RUN chown -R worker.worker /home/worker/
 
-EXPOSE 22 80
+EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
