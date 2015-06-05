@@ -19,6 +19,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
       -e 's/#UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g' \
       -e 's/^#UseDNS yes/UseDNS no/g' \
       /etc/ssh/sshd_config \
+    && echo 'root:root' | chpasswd \
     && rm -rf /etc/ssh/ssh_host_rsa_key \
     && ssh-keygen -q -b 1024 -N '' -t rsa -f /etc/ssh/ssh_host_rsa_key \
     && rm -rf /etc/ssh/ssh_host_dsa_key \
@@ -28,7 +29,8 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
 # -----------------------------------------------------------------------------
 # Add user worker
 # -----------------------------------------------------------------------------
-RUN useradd -m -u 1000 -p worker worker \
+RUN useradd -m -u 1000 worker \
+    && echo 'worker:worker' | chpasswd \
     && echo 'worker  ALL=(ALL)  NOPASSWD: ALL' > /etc/sudoers.d/worker \
     && sed -i \
         -e 's/^#PermitRootLogin yes/PermitRootLogin no/g' \
