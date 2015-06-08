@@ -29,7 +29,7 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Chongqing /etc/localtime \
 # -----------------------------------------------------------------------------
 # Add user worker
 # -----------------------------------------------------------------------------
-RUN useradd -m -u 1000 worker \
+RUN useradd -m -u 1000 -s /bin/bash worker \
     && echo 'worker:worker' | chpasswd \
     && echo 'worker  ALL=(ALL)  NOPASSWD: ALL' > /etc/sudoers.d/worker \
     && sed -i \
