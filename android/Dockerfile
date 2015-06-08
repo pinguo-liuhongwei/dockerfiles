@@ -48,7 +48,7 @@ RUN cd ${HOME} && rm -f android-sdk_r22.6-linux.tgz
 ENV ANDROID_HOME ${HOME}/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 # RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,android-17,extra-android-support --no-ui --force
-RUN echo y | android update sdk -a --no-ui --force
+RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter platform-tool,android-19,sysimg-19,build-tools-19.0.3,extra-android-support --no-ui --force
 
 # Cleaning
 RUN apt-get clean
