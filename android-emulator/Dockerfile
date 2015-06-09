@@ -1,4 +1,4 @@
-FROM pinguozhanglu/android
+FROM zhanglu/android
 
 MAINTAINER zhanglu "zhanglu@camera360.com"
 
@@ -6,7 +6,6 @@ ENV HOME /home/worker
 RUN mkdir -p ${HOME}/data/logs/supervisor
 RUN mkdir -p ${HOME}/data/run/supervisor
 RUN mkdir -p ${HOME}/data/android
-RUN mkdir -p ${HOME}/bin
 
 # RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force
 
