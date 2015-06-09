@@ -17,8 +17,6 @@ RUN mkdir -p ${HOME}/bin
 #RUN cd /opt/tmp && ./gradlew tasks
 #RUN rm -rf /opt/tmp
 
-ADD wait-for-emulator ${HOME}/bin
-ADD start-emulator ${HOME}/bin
 ADD run.sh /
 ADD config /home/worker/
 
