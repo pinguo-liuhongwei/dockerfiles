@@ -41,8 +41,8 @@ ENV HOME /home/worker
 
 # Main Android SDK
 RUN cd ${HOME} && wget -q http://dl.google.com/android/android-sdk_r24.2-linux.tgz
-RUN cd ${HOME} && tar xzf android-sdk_r22.6-linux.tgz
-RUN cd ${HOME} && rm -f android-sdk_r22.6-linux.tgz
+RUN cd ${HOME} && tar xzf android-sdk_r24.2-linux.tgz
+RUN cd ${HOME} && rm -f android-sdk_r24.2-linux.tgz
 
 # Other tools and resources of Android SDK
 ENV ANDROID_HOME ${HOME}/android-sdk-linux
