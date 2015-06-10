@@ -47,7 +47,7 @@ RUN cd ${HOME} && rm -f android-sdk_r22.6-linux.tgz
 # Other tools and resources of Android SDK
 ENV ANDROID_HOME ${HOME}/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter tools,platform-tools,build-tools-19.1.0,android-19,system-image,extra-android-support --no-ui --force
+RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter tools,platform-tools,build-tools-22.0.1,android-22,sys-img-armeabi-v7a-android-22,addon-google_apis-google-22,extra-android-support --no-ui --force
 # RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter platform-tools,build-tools-19.0.3,android-17,extra-android-support --no-ui --force
 # RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk -a --no-ui --force
 
