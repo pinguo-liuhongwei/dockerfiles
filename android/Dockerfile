@@ -7,7 +7,8 @@ RUN apt-get update -qq
 # Dependencies to execute android
 RUN apt-get install -y --no-install-recommends openjdk-7-jdk libgd2-xpm ia32-libs ia32-libs-multiarch \
         bzip2 unzip file vim curl telnet wget git \
-        openssl openssh-server sudo python-pip
+        openssl openssh-server sudo python-pip \
+        apt-get clean
         
 RUN pip install supervisor \
     && rm -rvf /tmp/*
@@ -50,9 +51,6 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --all --filter tools,platform-tools,build-tools-22.0.1,android-22,sys-img-armeabi-v7a-android-22,addon-google_apis-google-22,extra-android-support --no-ui --force
 # RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --filter platform-tools,build-tools-19.0.3,android-17,extra-android-support --no-ui --force
 # RUN ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk -a --no-ui --force
-
-# Cleaning
-RUN apt-get clean
 
 RUN mkdir -p /var/run/sshd
 RUN chown -R worker.worker /home/worker/
