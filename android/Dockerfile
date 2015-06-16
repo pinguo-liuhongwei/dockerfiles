@@ -8,7 +8,7 @@ RUN apt-get update -qq
 RUN apt-get install -y --no-install-recommends openjdk-7-jdk libgd2-xpm ia32-libs ia32-libs-multiarch \
         bzip2 unzip file vim curl telnet wget git \
         openssl openssh-server sudo python-pip \
-        apt-get clean
+    && apt-get clean
         
 RUN pip install supervisor \
     && rm -rvf /tmp/*
