@@ -1,12 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-if [ $# -gt 0 ]; then
-  CMD=$1
-  PORT=5554
-  echo "Starting emulator[$PORT]..."
-  emulator -avd test -no-skin -no-audio -no-window -port $PORT &
-  wait-for-emulator
-  $CMD
-else
-  echo "No command is specified"
-fi
+PORT=5554
+echo "Starting emulator[$PORT]..."
+emulator -avd avd1 -no-skin -no-audio -no-window -port $PORT &
+/home/worker/bin/wait-for-emulator
+adb install -r facedetect.apk

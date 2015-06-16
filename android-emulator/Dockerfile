@@ -10,7 +10,7 @@ RUN mkdir -p ${HOME}/data/android
 # RUN echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force
 
 # Set up and run emulator
-RUN echo no | android create avd --force -n adr22 -t android-22 -b armeabi-v7a
+RUN echo no | android create avd --force -n avd1 -t android-22 -b armeabi-v7a
 
 # RUN mkdir -p ${HOME}/testProject && android create project -g -v 2.2.+ -a MainActivity -k com.example.example -t android-19 -p ${HOME}/testProject
 #RUN cd /opt/tmp && ./gradlew tasks
