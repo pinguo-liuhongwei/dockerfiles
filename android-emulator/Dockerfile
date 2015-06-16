@@ -20,6 +20,7 @@ ADD run.sh /
 ADD config /home/worker/
 
 RUN chmod a+x /run.sh
+RUN chmod a+x /home/worker/bin/*
 RUN chown -R worker.worker /home/worker/
 
 VOLUME ${HOME}/data/android
