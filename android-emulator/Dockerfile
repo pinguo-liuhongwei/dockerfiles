@@ -1,4 +1,4 @@
-FROM zhanglu/android
+FROM pinguozhanglu/android
 MAINTAINER zhanglu "zhanglu@camera360.com"
 
 ENV HOME /home/worker
