@@ -2,10 +2,10 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
+    . /etc/bashrc
 fi
 
 if [ -f ~/.bash_alias ]; then
-        . ~/.bash_alias
+    . ~/.bash_alias
 fi
 
