@@ -2,7 +2,7 @@ FROM pinguoops/env:centos6
 MAINTAINER zhanglu "zhanglu@camera360.com"
 
 RUN yum -y install \
-    glibc.i686 zlib.i686 \
+    glibc.i686 zlib.i686 libstdc++.i686 \
     java-1.7.0-openjdk.x86_64 \
     && rm -rvf /var/cache/{yum,ldconfig}/* \
     && rm -rvf /etc/ld.so.cache \
