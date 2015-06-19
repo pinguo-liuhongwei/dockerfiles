@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo '/etc/init.d/ssh start'
-/etc/init.d/ssh start
+echo '/etc/init.d/sshd start'
+/etc/init.d/sshd start
 
 if [ -f /home/worker/bin/init.sh ]; then
     echo '/home/worker/bin/init.sh'
