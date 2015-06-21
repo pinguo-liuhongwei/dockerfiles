@@ -9,8 +9,8 @@ if [ -f /home/worker/bin/init.sh ]; then
     su worker -c '/home/worker/bin/init.sh'
 fi
 
-#echo '/usr/local/bin/supervisord -c /home/worker/supervisor/supervisord.conf'
-#/usr/local/bin/supervisord -c /home/worker/supervisor/supervisord.conf
+echo 'service crond start'
+service crond start
 
 echo '/usr/bin/supervisord -c /home/worker/supervisor/supervisord.conf'
 /usr/bin/supervisord -c /home/worker/supervisor/supervisord.conf
