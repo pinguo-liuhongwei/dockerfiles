@@ -4,9 +4,11 @@ MAINTAINER zhanglu "zhanglu@camera360.com"
 RUN yum -y install \
     glibc.i686 zlib.i686 libstdc++.i686 \
     java-1.7.0-openjdk.x86_64 \
+    vixie-cron crontabs \
     && rm -rvf /var/cache/{yum,ldconfig}/* \
     && rm -rvf /etc/ld.so.cache \
-    && yum clean all
+    && yum clean all \
+    && chkconfig --level 35 crond on
 
 # -----------------------------------------------------------------------------
 # Add user worker
