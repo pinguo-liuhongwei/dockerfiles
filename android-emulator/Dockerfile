@@ -9,6 +9,9 @@ RUN mkdir -p ${HOME}/data/logs/supervisor \
 ADD run.sh /
 ADD config /home/worker/
 
+RUN crontab -u worker /home/worker/cron \
+    && rm -rf /home/worker/cron \
+    && service crond start
 RUN chmod a+x /run.sh \
     && chmod a+x /home/worker/bin/*
 RUN chown -R worker.worker /home/worker/ \
@@ -19,6 +22,10 @@ RUN chown -R worker.worker /home/worker/ \
 ENV ANDROID_HOME ${HOME}/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 RUN echo no | su worker -c 'android create avd --force -n avd1 -t android-22 -b armeabi-v7a'
+    && sed -i \
+    -e 's/^hw\.ramSize=[0-9]*/hw.ramSize=1024/g' \
+    -e 's/^vm\.heapSize=[0-9]*/vm.heapSize=768/g' \
+    /home/worker/.android/avd/avd1.avd/config.ini
 
 VOLUME ${HOME}/data/android
 WORKDIR ${HOME}

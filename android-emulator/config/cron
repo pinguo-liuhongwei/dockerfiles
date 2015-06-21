@@ -1,0 +1,1 @@
+*/5 * * * * /home/worker/bin/emulator_daemon.sh>/home/worker/data/logs/emulator_daemon.log 2>&1

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source /home/worker/.bash_profile
 echo "Waiting for emulator to start..."
 
 bootanim=""
