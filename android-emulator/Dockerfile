@@ -21,7 +21,7 @@ RUN chown -R worker.worker /home/worker/ \
 # Set up and run emulator
 ENV ANDROID_HOME ${HOME}/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-RUN echo no | su worker -c 'android create avd --force -n avd1 -t android-22 -b armeabi-v7a'
+RUN echo no | su worker -c 'android create avd --force -n avd1 -t android-22 -b armeabi-v7a' \
     && sed -i \
     -e 's/^hw\.ramSize=[0-9]*/hw.ramSize=1024/g' \
     -e 's/^vm\.heapSize=[0-9]*/vm.heapSize=768/g' \
