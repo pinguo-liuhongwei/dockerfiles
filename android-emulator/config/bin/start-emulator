@@ -8,6 +8,7 @@ PWD=`pwd`
 cd /home/worker/data/android
 emulator -avd avd1 -no-skin -no-audio -no-window -port $PORT &
 /home/worker/bin/wait-for-emulator
+sleep 30
 adb uninstall us.pinguo.facedetect
 adb install -r /home/worker/data/android/facedetect.apk
 sleep 30
