@@ -10,8 +10,7 @@ ADD run.sh /
 ADD config /home/worker/
 
 RUN crontab -u worker /home/worker/cron \
-    && rm -rf /home/worker/cron \
-    && service crond start
+    && rm -rf /home/worker/cron
 RUN chmod a+x /run.sh \
     && chmod a+x /home/worker/bin/*
 RUN chown -R worker.worker /home/worker/ \
